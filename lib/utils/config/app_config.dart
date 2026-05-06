@@ -1,0 +1,37 @@
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:logger/logger.dart';
+
+import '../../share/model/language_model.dart';
+
+class AppConfig {
+  //API Base URL
+  // static const String baseURL = "http://10.10.20.52:5002/api";
+  static const String baseURL =
+      "https://pn9hvmp3-5000.asse.devtunnels.ms/api/v1";
+  static const String primaryFont = "Bebas Neue";
+  static const String secondaryFont = "Poppins";
+  static final logger = Logger(
+    printer: PrettyPrinter(
+      methodCount: 0,
+      errorMethodCount: 5,
+      lineLength: 80,
+      colors: false,
+      printEmojis: true,
+    ),
+  );
+
+  //Default Language Key
+  static const String defaultLanguageKey = "en";
+
+  static const defaultProfile =
+      "https://img.freepik.com/premium-photo/casual-young-man-shirt_146377-2992.jpg";
+  static List<LanguageModel> languages = [
+    // LanguageModel(imageUrl: "", languageName: 'german'.tr, countryCode: 'DE', languageCode: 'de'),
+    LanguageModel(
+      imageUrl: "",
+      languageName: 'english'.tr,
+      countryCode: 'US',
+      languageCode: 'en',
+    ),
+  ];
+}
