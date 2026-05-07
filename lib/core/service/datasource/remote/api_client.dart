@@ -87,8 +87,9 @@ class ApiClient {
     Map<String, dynamic>? body,
     String? token,
   }) async {
-    if (!await _hasConnection())
+    if (!await _hasConnection()) {
       return _buildErrorResponse('No internet connection');
+    }
 
     try {
       final headers = await _headers(token: token);
@@ -108,8 +109,9 @@ class ApiClient {
     Map<String, dynamic>? body,
     String? token,
   }) async {
-    if (!await _hasConnection())
+    if (!await _hasConnection()) {
       return _buildErrorResponse('No internet connection');
+    }
 
     try {
       final headers = await _headers(token: token);
@@ -129,8 +131,9 @@ class ApiClient {
     Map<String, dynamic>? body,
     String? token,
   }) async {
-    if (!await _hasConnection())
+    if (!await _hasConnection()) {
       return _buildErrorResponse('No internet connection');
+    }
 
     try {
       final headers = await _headers(token: token, isJson: false);
@@ -152,8 +155,9 @@ class ApiClient {
     required String token,
     Map<String, String>? fields,
   }) async {
-    if (!await _hasConnection())
+    if (!await _hasConnection()) {
       return _buildErrorResponse('No internet connection');
+    }
 
     try {
       final headers = await _headers(token: token, isJson: false);

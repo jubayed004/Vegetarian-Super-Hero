@@ -31,7 +31,7 @@ class OptionCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected
-                ? AppColors.primaryText
+                ? AppColors.darkPrimary
                 : AppColors.white.withValues(alpha: 0.1),
             width: isSelected ? 1.5 : 1,
           ),
@@ -87,7 +87,7 @@ class OptionCard extends StatelessWidget {
                 shape: BoxShape.circle,
                 border: Border.all(
                   color: isSelected
-                      ? AppColors.primaryText
+                      ? AppColors.darkPrimary
                       : AppColors.white.withValues(alpha: 0.2),
                   width: 2,
                 ),
@@ -96,7 +96,7 @@ class OptionCard extends StatelessWidget {
                   ? const Center(
                       child: Icon(
                         Icons.check,
-                        color: AppColors.primaryText,
+                        color: AppColors.darkPrimary,
                         size: 20,
                       ),
                     )

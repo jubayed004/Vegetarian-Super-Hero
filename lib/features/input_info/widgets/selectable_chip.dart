@@ -22,10 +22,10 @@ class SelectableChip extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
           color: isSelected
-              ? AppColors.primaryText.withValues(alpha: 0.1)
+              ? AppColors.darkPrimary.withValues(alpha: 0.1)
               : AppColors.white.withValues(alpha: 0.1),
           border: Border.all(
-            color: isSelected ? AppColors.primaryText : Colors.transparent,
+            color: isSelected ? AppColors.darkPrimary : Colors.transparent,
             width: 1,
           ),
           borderRadius: BorderRadius.circular(25),
@@ -34,7 +34,7 @@ class SelectableChip extends StatelessWidget {
           label,
           style: TextStyle(
             color: isSelected
-                ? AppColors.primaryText
+                ? AppColors.darkPrimary
                 : AppColors.white.withValues(alpha: 0.6),
             fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             fontFamily: AppConfig.secondaryFont,

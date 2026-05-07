@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide ContextExtensionss;
-import 'package:go_router/go_router.dart';
 import 'package:vegetarian_super_hero/core/router/route_path.dart';
 import 'package:vegetarian_super_hero/core/router/routes.dart';
 import 'package:vegetarian_super_hero/features/onboarding/model/onboarding_model.dart';
 import 'package:vegetarian_super_hero/utils/app_strings/app_strings.dart';
-import 'package:vegetarian_super_hero/utils/extension/base_extension.dart';
 
 class OnboardingController extends GetxController {
   final PageController pageController = PageController();

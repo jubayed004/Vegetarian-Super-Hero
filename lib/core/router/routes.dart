@@ -11,6 +11,11 @@ import 'package:vegetarian_super_hero/features/input_info/view/input_info_screen
 import 'package:vegetarian_super_hero/features/onboarding/view/onboarding_screen.dart';
 import 'package:vegetarian_super_hero/features/splash/view/splash_screen.dart';
 import 'package:vegetarian_super_hero/utils/extension/base_extension.dart';
+import 'package:vegetarian_super_hero/features/activate_plan/view/activate_plan_screen.dart';
+import 'package:vegetarian_super_hero/features/subscriptions/view/payment_success_screen.dart';
+import 'package:vegetarian_super_hero/features/subscriptions/view/processing_payment_screen.dart';
+import 'package:vegetarian_super_hero/features/subscriptions/view/subscription_screen.dart';
+import 'package:vegetarian_super_hero/features/nav/view/nav_screen.dart';
 
 class AppRouter {
   static final GlobalKey<NavigatorState> navigatorKey =
@@ -131,6 +136,56 @@ class AppRouter {
           final otp = map['otp'] as String?;
           return _buildPageWithAnimation(
             child: ResetPasswordScreen(email: email ?? "", otp: otp ?? ""),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.subscriptionScreen,
+        path: RoutePath.subscriptionScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const SubscriptionScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.processingPaymentScreen,
+        path: RoutePath.processingPaymentScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const ProcessingPaymentScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.paymentSuccessScreen,
+        path: RoutePath.paymentSuccessScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const PaymentSuccessScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.activatePlanScreen,
+        path: RoutePath.activatePlanScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const ActivatePlanScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.navScreen,
+        path: RoutePath.navScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const NavScreen(),
             state: state,
           );
         },

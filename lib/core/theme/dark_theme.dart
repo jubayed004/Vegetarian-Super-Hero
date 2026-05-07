@@ -11,8 +11,8 @@ final ThemeData darkTheme = ThemeData(
     elevation: 0,
     centerTitle: true,
     iconTheme: IconThemeData(color: AppColors.darkPrimary),
-    titleTextStyle: TextStyle(
-      color: AppColors.darkText,
+    titleTextStyle: const TextStyle(
+      color: AppColors.white,
       fontFamily: AppConfig.primaryFont,
       fontSize: 18,
       fontWeight: FontWeight.w600,
@@ -21,7 +21,7 @@ final ThemeData darkTheme = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: AppColors.darkPrimary,
-      foregroundColor: AppColors.brandHoverColor,
+      foregroundColor: AppColors.darkSurface,
       minimumSize: const Size(186, 48),
       padding: const EdgeInsets.all(10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -34,16 +34,11 @@ final ThemeData darkTheme = ThemeData(
   ),
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-                        side: const BorderSide(
-                          color: AppColors.primaryText,
-                          width: 1.5,
-                        ),
-                        foregroundColor: AppColors.primaryText,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
+      side: const BorderSide(color: AppColors.darkPrimary, width: 1.5),
+      foregroundColor: AppColors.darkPrimary,
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+    ),
   ),
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
@@ -71,11 +66,11 @@ final ThemeData darkTheme = ThemeData(
     ),
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: const BorderSide(width: 2, color: AppColors.errorColor),
+      borderSide: const BorderSide(width: 2, color: AppColors.error),
     ),
     focusedErrorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: const BorderSide(width: 2, color: AppColors.errorColor),
+      borderSide: const BorderSide(width: 2, color: AppColors.error),
     ),
     disabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
@@ -95,7 +90,7 @@ final ThemeData darkTheme = ThemeData(
       fontFamily: AppConfig.secondaryFont,
       fontSize: 12,
       fontWeight: FontWeight.w400,
-      color: AppColors.errorColor,
+      color: AppColors.error,
     ),
   ),
   textTheme: const TextTheme(
@@ -103,37 +98,37 @@ final ThemeData darkTheme = ThemeData(
       fontFamily: AppConfig.primaryFont,
       fontSize: 32,
       fontWeight: FontWeight.w400,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
     headlineMedium: TextStyle(
       fontFamily: AppConfig.primaryFont,
       fontSize: 28,
       fontWeight: FontWeight.w400,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
     headlineSmall: TextStyle(
       fontFamily: AppConfig.primaryFont,
       fontSize: 24,
       fontWeight: FontWeight.w400,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
     titleLarge: TextStyle(
       fontFamily: AppConfig.primaryFont,
       fontSize: 22,
       fontWeight: FontWeight.w600,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
     titleMedium: TextStyle(
       fontFamily: AppConfig.primaryFont,
       fontSize: 16,
       fontWeight: FontWeight.w600,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
     titleSmall: TextStyle(
       fontFamily: AppConfig.primaryFont,
       fontSize: 16,
       fontWeight: FontWeight.w400,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
     bodyLarge: TextStyle(
       fontFamily: AppConfig.secondaryFont,
@@ -143,33 +138,33 @@ final ThemeData darkTheme = ThemeData(
     ),
     bodyMedium: TextStyle(
       fontFamily: AppConfig.secondaryFont,
-      fontSize: 12,
-      fontWeight: FontWeight.w500,
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
       color: AppColors.darkSecondaryText,
     ),
     bodySmall: TextStyle(
       fontFamily: AppConfig.secondaryFont,
-      fontSize: 10,
-      fontWeight: FontWeight.w500,
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
       color: AppColors.darkSecondaryText,
     ),
     labelLarge: TextStyle(
       fontFamily: AppConfig.secondaryFont,
       fontSize: 16,
       fontWeight: FontWeight.w500,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
     labelMedium: TextStyle(
       fontFamily: AppConfig.secondaryFont,
       fontSize: 14,
       fontWeight: FontWeight.w500,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
     labelSmall: TextStyle(
       fontFamily: AppConfig.secondaryFont,
       fontSize: 12,
       fontWeight: FontWeight.w500,
-      color: AppColors.darkText,
+      color: AppColors.white,
     ),
   ),
 );

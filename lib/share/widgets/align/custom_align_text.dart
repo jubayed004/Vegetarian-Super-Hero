@@ -12,7 +12,7 @@ class CustomAlignText extends StatelessWidget {
     this.color,
     this.style,
     this.maxLine,
-    this.textAlign
+    this.textAlign,
   });
 
   final Alignment alignment;
@@ -29,14 +29,16 @@ class CustomAlignText extends StatelessWidget {
     return Align(
       alignment: alignment,
       child: Text(
-          text,
-          textAlign: textAlign ?? TextAlign.start,
-          maxLines: maxLine,
-          style: style??context.titleSmall.copyWith(
-            fontWeight: fontWeight ?? FontWeight.w500,
-            fontSize: fontSize,
-            color: color,
-          ),
+        text,
+        textAlign: textAlign ?? TextAlign.start,
+        maxLines: maxLine,
+        style:
+            style ??
+            context.titleSmall.copyWith(
+              fontWeight: fontWeight ?? FontWeight.w400,
+              fontSize: fontSize,
+              color: color,
+            ),
       ),
     );
   }

@@ -60,7 +60,7 @@ class AuthSelectionScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          AppColors.primaryText.withValues(alpha: 0.8),
+                          AppColors.darkPrimary.withValues(alpha: 0.8),
                           Colors.transparent,
                         ],
                         begin: Alignment.centerLeft,
@@ -88,10 +88,10 @@ class AuthSelectionScreen extends StatelessWidget {
                       },
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(
-                          color: AppColors.primaryText,
+                          color: AppColors.darkPrimary,
                           width: 1.5,
                         ),
-                        foregroundColor: AppColors.primaryText,
+                        foregroundColor: AppColors.darkPrimary,
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -100,7 +100,7 @@ class AuthSelectionScreen extends StatelessWidget {
                       child: Text(
                         AppStrings.logIn.tr.toUpperCase(),
                         style: context.textTheme.titleMedium?.copyWith(
-                          color: AppColors.primaryText,
+                          color: AppColors.darkPrimary,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

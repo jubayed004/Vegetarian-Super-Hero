@@ -40,7 +40,7 @@ class AppColors {
   // ==============================
   // DARK THEME COLORS
   // ==============================
-  static const Color darkBackground = Color(0xFF121212);
+  static const Color darkBackground = Color(0xFF0a0f0d);
   static const Color darkSurface = Color(0xFF1E1E1E);
   static const Color darkPrimary = Color(0xFF9DFC29);
   static const Color darkText = Color(0xFF0A0F0D);
@@ -52,6 +52,19 @@ class AppColors {
   // ==============================
   static const Color orangeAccent = Color(0xFFFF6B35);
   static const Color greenAccent = Color(0xFF39FF14);
-  static const Color yellowAccent = Color(0xFFFFE135);
   static const Color purpleAccent = Color(0xFF7B68EE);
+
+  // ==============================
+  // GENERIC UI COLORS (Previously Subscription specific)
+  // ==============================
+  static const Color badgeSuccessBg = Color(0xFF1A2A1A);
+  static const Color surfaceDeep = Color(0xFF111111);
+  static const Color goldAccent = Color(0xFFB8860B);
+  static const Color textGrey = Color(0xFF888888);
+  static const Color yellowAccent = Color(0xFFFFD700);
+  static const Color surfaceLight = Color(0xFF1E1E1E);
+  static const Color textGreyLight = Color(0xFFBBBBBB);
+  static const Color textGreyMuted = Color(0xFF666666);
+  static const Color dividerGrey = Color(0xFF444444);
+  static const Color textOffWhite = Color(0xFFEEEEEE);
 }

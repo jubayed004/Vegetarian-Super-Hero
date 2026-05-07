@@ -48,7 +48,7 @@ class AppDialog {
         break;
       case AppDialogType.custom:
         defaultIcon = Icons.circle;
-        typeColor = AppColors.brandHoverColor;
+        typeColor = AppColors.darkSurface;
         break;
     }
 

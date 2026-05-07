@@ -27,4 +27,9 @@ class RoutePath {
   static const String privacyPolicyScreen = 'privacyPolicyScreen';
   static const String referenceScreen = 'referenceScreen';
   static const String saveDetailsScreen = 'saveDetailsScreen';
+  static const String processingPaymentScreen = 'processingPaymentScreen';
+  static const String paymentSuccessScreen = 'paymentSuccessScreen';
+  static const String subscriptionScreen = 'subscriptionScreen';
+  static const String activatePlanScreen = 'activatePlanScreen';
+  static const String navScreen = 'navScreen';
 }

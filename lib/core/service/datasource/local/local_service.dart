@@ -1,7 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetarian_super_hero/utils/local/local_keys.dart';
 import 'package:vegetarian_super_hero/utils/enum/app_enum.dart';
-import 'package:vegetarian_super_hero/utils/local/local_keys.dart';
 import 'package:vegetarian_super_hero/helper/logger/app_logger.dart';
 
 class LocalService {

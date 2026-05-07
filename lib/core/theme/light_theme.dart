@@ -4,15 +4,15 @@
 // 
 // final ThemeData lightTheme = ThemeData(
 //   brightness: Brightness.light,
-//   scaffoldBackgroundColor: AppColors.backgroundColor,
+//   scaffoldBackgroundColor: AppColors.lightBackground,
 //   fontFamily: AppConfig.secondaryFont,
 //   appBarTheme: const AppBarTheme(
-//     backgroundColor: AppColors.backgroundColor,
+//     backgroundColor: AppColors.lightBackground,
 //     elevation: 0,
 //     centerTitle: true,
-//     iconTheme: IconThemeData(color: AppColors.brandHoverColor),
+//     iconTheme: IconThemeData(color: AppColors.brandDarkSurface),
 //     titleTextStyle: TextStyle(
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //       fontFamily: AppConfig.primaryFont,
 //       fontSize: 18,
 //       fontWeight: FontWeight.w600,
@@ -20,8 +20,8 @@
 //   ),
 //   elevatedButtonTheme: ElevatedButtonThemeData(
 //     style: ElevatedButton.styleFrom(
-//       backgroundColor: AppColors.primaryText,
-//       foregroundColor: AppColors.white,
+//       backgroundColor: AppColors.brandPrimary,
+//       foregroundColor: AppColors.pureWhite,
 //       minimumSize: const Size(186, 48),
 //       padding: const EdgeInsets.all(10),
 //       shape: RoundedRectangleBorder(
@@ -36,8 +36,8 @@
 //   ),
 //   outlinedButtonTheme: OutlinedButtonThemeData(
 //     style: OutlinedButton.styleFrom(
-//       side: const BorderSide(color: AppColors.primaryText, width: 1.5),
-//       foregroundColor: AppColors.primaryText,
+//       side: const BorderSide(color: AppColors.brandPrimary, width: 1.5),
+//       foregroundColor: AppColors.brandPrimary,
 //       minimumSize: const Size(186, 48),
 //       padding: const EdgeInsets.all(10),
 //       shape: RoundedRectangleBorder(
@@ -52,7 +52,7 @@
 //   ),
 //   textButtonTheme: TextButtonThemeData(
 //     style: TextButton.styleFrom(
-//       foregroundColor: AppColors.primaryText,
+//       foregroundColor: AppColors.brandPrimary,
 //       textStyle: const TextStyle(
 //         fontFamily: AppConfig.primaryFont,
 //         fontWeight: FontWeight.w600,
@@ -62,34 +62,34 @@
 //     ),
 //   ),
 //   iconTheme: const IconThemeData(
-//     color: AppColors.primaryText,
+//     color: AppColors.brandPrimary,
 //   ),
 //   inputDecorationTheme: InputDecorationTheme(
 //     filled: true,
-//     fillColor: AppColors.white,
-//     iconColor: AppColors.lightTextPrimary,
-//     prefixIconColor: AppColors.lightTextPrimary,
-//     suffixIconColor: AppColors.lightTextPrimary,
+//     fillColor: AppColors.pureWhite,
+//     iconColor: AppColors.lightTextMain,
+//     prefixIconColor: AppColors.lightTextMain,
+//     suffixIconColor: AppColors.lightTextMain,
 //     contentPadding: const EdgeInsets.symmetric(
 //       horizontal: 15,
 //       vertical: 14,
 //     ),
 //     enabledBorder: OutlineInputBorder(
 //       borderRadius: BorderRadius.circular(12),
-//       borderSide: const BorderSide(color: AppColors.borderColor),
+//       borderSide: const BorderSide(color: AppColors.lightBorder),
 //     ),
 //     errorBorder: OutlineInputBorder(
 //       borderRadius: BorderRadius.circular(12),
 //       borderSide: const BorderSide(
 //         width: 2,
-//         color: AppColors.errorColor,
+//         color: AppColors.semanticError,
 //       ),
 //     ),
 //     focusedErrorBorder: OutlineInputBorder(
 //       borderRadius: BorderRadius.circular(12),
 //       borderSide: const BorderSide(
 //         width: 2,
-//         color: AppColors.errorColor,
+//         color: AppColors.semanticError,
 //       ),
 //     ),
 //     disabledBorder: OutlineInputBorder(
@@ -98,19 +98,19 @@
 //     ),
 //     focusedBorder: OutlineInputBorder(
 //       borderRadius: BorderRadius.circular(12),
-//       borderSide: const BorderSide(color: AppColors.primaryText),
+//       borderSide: const BorderSide(color: AppColors.brandPrimary),
 //     ),
 //     hintStyle: const TextStyle(
 //       fontFamily: AppConfig.secondaryFont,
 //       fontSize: 14,
 //       fontWeight: FontWeight.w400,
-//       color: AppColors.secondaryText,
+//       color: AppColors.lightTextSecondary,
 //     ),
 //     errorStyle: const TextStyle(
 //       fontFamily: AppConfig.secondaryFont,
 //       fontSize: 12,
 //       fontWeight: FontWeight.w400,
-//       color: AppColors.errorColor,
+//       color: AppColors.semanticError,
 //     ),
 //   ),
 //   textTheme: const TextTheme(
@@ -118,73 +118,73 @@
 //       fontFamily: AppConfig.primaryFont,
 //       fontSize: 32,
 //       fontWeight: FontWeight.w600,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //     headlineMedium: TextStyle(
 //       fontFamily: AppConfig.primaryFont,
 //       fontSize: 28,
 //       fontWeight: FontWeight.w600,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //     headlineSmall: TextStyle(
 //       fontFamily: AppConfig.primaryFont,
 //       fontSize: 24,
 //       fontWeight: FontWeight.w600,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //     titleLarge: TextStyle(
 //       fontFamily: AppConfig.primaryFont,
 //       fontSize: 22,
 //       fontWeight: FontWeight.w600,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //     titleMedium: TextStyle(
 //       fontFamily: AppConfig.primaryFont,
 //       fontSize: 16,
 //       fontWeight: FontWeight.w600,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //     titleSmall: TextStyle(
 //       fontFamily: AppConfig.primaryFont,
 //       fontSize: 14,
 //       fontWeight: FontWeight.w600,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //     bodyLarge: TextStyle(
 //       fontFamily: AppConfig.secondaryFont,
 //       fontSize: 14,
 //       fontWeight: FontWeight.w500,
-//       color: AppColors.secondaryText,
+//       color: AppColors.lightTextSecondary,
 //     ),
 //     bodyMedium: TextStyle(
 //       fontFamily: AppConfig.secondaryFont,
 //       fontSize: 12,
 //       fontWeight: FontWeight.w500,
-//       color: AppColors.secondaryText,
+//       color: AppColors.lightTextSecondary,
 //     ),
 //     bodySmall: TextStyle(
 //       fontFamily: AppConfig.secondaryFont,
 //       fontSize: 10,
 //       fontWeight: FontWeight.w500,
-//       color: AppColors.secondaryText,
+//       color: AppColors.lightTextSecondary,
 //     ),
 //     labelLarge: TextStyle(
 //       fontFamily: AppConfig.secondaryFont,
 //       fontSize: 16,
 //       fontWeight: FontWeight.w500,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //     labelMedium: TextStyle(
 //       fontFamily: AppConfig.secondaryFont,
 //       fontSize: 14,
 //       fontWeight: FontWeight.w500,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //     labelSmall: TextStyle(
 //       fontFamily: AppConfig.secondaryFont,
 //       fontSize: 12,
 //       fontWeight: FontWeight.w500,
-//       color: AppColors.lightTextPrimary,
+//       color: AppColors.lightTextMain,
 //     ),
 //   ),
 // );

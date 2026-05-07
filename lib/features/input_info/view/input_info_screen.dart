@@ -73,8 +73,8 @@ class InputInfoScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  AppColors.primaryText.withValues(alpha: 0.7),
-                                  AppColors.primaryText,
+                                  AppColors.darkPrimary.withValues(alpha: 0.7),
+                                  AppColors.darkPrimary,
                                 ],
                               ),
                               borderRadius: BorderRadius.circular(20),
@@ -111,7 +111,7 @@ class InputInfoScreen extends StatelessWidget {
               child: Obx(
                 () => CustomButton(
                   text: controller.currentIndex.value == 8
-                      ? "REVIEW MY PLAN"
+                      ? AppStrings.reviewMyPlan.tr.toUpperCase()
                       : AppStrings.continueText.tr.toUpperCase(),
                   onTap: controller.nextPage,
                 ),

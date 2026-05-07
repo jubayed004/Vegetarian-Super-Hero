@@ -27,13 +27,13 @@ class OnboardingScreen extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.primaryText.withValues(alpha: 0.5)),
+                    border: Border.all(color: AppColors.darkPrimary.withValues(alpha: 0.5)),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
                    AppStrings.skip.tr,
                     style: context.textTheme.labelMedium?.copyWith(
-                      color: AppColors.primaryText,
+                      color: AppColors.darkPrimary,
                     ),
                   ),
                 ),
@@ -71,8 +71,8 @@ class OnboardingScreen extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                           decoration: BoxDecoration(
-                            color: AppColors.primaryText.withValues(alpha: 0.1),
-                            border: Border.all(color: AppColors.primaryText.withValues(alpha: 0.3)),
+                            color: AppColors.darkPrimary.withValues(alpha: 0.1),
+                            border: Border.all(color: AppColors.darkPrimary.withValues(alpha: 0.3)),
                             borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(20),
                               bottomRight: Radius.circular(20),
@@ -87,7 +87,7 @@ class OnboardingScreen extends StatelessWidget {
                                 width: 6,
                                 height: 6,
                                 decoration: const BoxDecoration(
-                                  color: AppColors.primaryText,
+                                  color: AppColors.darkPrimary,
                                   shape: BoxShape.circle,
                                 ),
                               ),
@@ -95,7 +95,7 @@ class OnboardingScreen extends StatelessWidget {
                               Text(
                                 model.tag,
                                 style: context.textTheme.labelSmall?.copyWith(
-                                  color: AppColors.primaryText,
+                                  color: AppColors.darkPrimary,
                                   fontWeight: FontWeight.bold,
                                   letterSpacing: 1.2,
                                 ),
@@ -116,7 +116,7 @@ class OnboardingScreen extends StatelessWidget {
                               if (model.title2.isNotEmpty)
                                 TextSpan(
                                   text: model.title2,
-                                  style: const TextStyle(color: AppColors.primaryText),
+                                  style: const TextStyle(color: AppColors.darkPrimary),
                                 ),
                               if (model.title3.isNotEmpty)
                                 TextSpan(text: model.title3),
@@ -139,7 +139,7 @@ class OnboardingScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                AppColors.primaryText.withValues(alpha: 0.8),
+                                AppColors.darkPrimary.withValues(alpha: 0.8),
                                 Colors.transparent,
                               ],
                               begin: Alignment.centerLeft,
@@ -175,7 +175,7 @@ class OnboardingScreen extends StatelessWidget {
                               width: isActive ? 24 : 6,
                               decoration: BoxDecoration(
                                 color: isActive
-                                    ? AppColors.primaryText
+                                    ? AppColors.darkPrimary
                                     : AppColors.darkSecondaryText.withValues(alpha: 0.5),
                                 borderRadius: BorderRadius.circular(6),
                               ),
@@ -187,7 +187,7 @@ class OnboardingScreen extends StatelessWidget {
                       ElevatedButton(
                         onPressed: controller.nextPage,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primaryText,
+                          backgroundColor: AppColors.darkPrimary,
                           foregroundColor: AppColors.black,
                           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
                           shape: RoundedRectangleBorder(

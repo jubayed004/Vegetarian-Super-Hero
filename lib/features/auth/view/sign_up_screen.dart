@@ -116,7 +116,7 @@ class SignUpScreen extends StatelessWidget {
                       Checkbox(
                         value: controller.signUpRememberMe.value,
                         onChanged: (val) => controller.toggleSignUpRememberMe(),
-                        activeColor: AppColors.primaryText,
+                        activeColor: AppColors.darkPrimary,
                         checkColor: AppColors.black,
                         side: const BorderSide(color: AppColors.white),
                       ),
@@ -189,7 +189,7 @@ class SignUpScreen extends StatelessWidget {
                       child: Text(
                         AppStrings.logIn.tr,
                         style: context.bodyMedium.copyWith(
-                          color: AppColors.primaryText,
+                          color: AppColors.darkPrimary,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

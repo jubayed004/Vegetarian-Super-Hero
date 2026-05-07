@@ -70,9 +70,9 @@ class CustomInfoSelector extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
-            if (showDropdown)
-              const Icon(Icons.keyboard_arrow_down,
-                  color: AppColors.darkSecondaryText, size: 20),
+              if (showDropdown)
+                const Icon(Icons.keyboard_arrow_down,
+                    color: AppColors.darkSecondaryText, size: 20),
           ],
         ),
       ),

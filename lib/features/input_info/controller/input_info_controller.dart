@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vegetarian_super_hero/core/router/route_path.dart';
+import 'package:vegetarian_super_hero/core/router/routes.dart';
 
 class InputInfoController extends GetxController {
   final PageController pageController = PageController();
@@ -55,7 +57,7 @@ class InputInfoController extends GetxController {
         curve: Curves.easeIn,
       );
     } else {
-      // Handle completion
+      AppRouter.route.goNamed(RoutePath.subscriptionScreen);
     }
   }
 

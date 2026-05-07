@@ -412,7 +412,7 @@ class DietStep extends StatelessWidget {
             decoration: BoxDecoration(
               color: AppColors.white.withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppColors.primaryText, width: 1),
+              border: Border.all(color: AppColors.darkPrimary, width: 1),
             ),
             child: Row(
               children: [
@@ -420,7 +420,7 @@ class DietStep extends StatelessWidget {
                   width: 36,
                   height: 36,
                   decoration: const BoxDecoration(
-                    color: AppColors.primaryText,
+                    color: AppColors.darkPrimary,
                     shape: BoxShape.circle,
                   ),
                   child:
@@ -443,7 +443,7 @@ class DietStep extends StatelessWidget {
                     Text(
                       "Enforced — all plans are plant-based",
                       style: TextStyle(
-                        color: AppColors.primaryText.withValues(alpha: 0.8),
+                        color: AppColors.darkPrimary.withValues(alpha: 0.8),
                         fontFamily: AppConfig.secondaryFont,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
@@ -530,7 +530,7 @@ class MealFrequencyStep extends StatelessWidget {
                 () => Text(
                   controller.mealFrequency.value,
                   style: TextStyle(
-                    color: AppColors.primaryText,
+                    color: AppColors.darkPrimary,
                     fontSize: 80,
                     fontWeight: FontWeight.bold,
                     fontFamily: AppConfig.primaryFont,
@@ -576,7 +576,7 @@ class MealFrequencyStep extends StatelessWidget {
                       color: AppColors.white.withValues(alpha: 0.1),
                       border: Border.all(
                         color: controller.mealFrequency.value == count
-                            ? AppColors.primaryText
+                            ? AppColors.darkPrimary
                             : Colors.transparent,
                         width: 1,
                       ),
@@ -586,7 +586,7 @@ class MealFrequencyStep extends StatelessWidget {
                       count,
                       style: TextStyle(
                         color: controller.mealFrequency.value == count
-                            ? AppColors.primaryText
+                            ? AppColors.darkPrimary
                             : AppColors.white.withValues(alpha: 0.6),
                         fontSize: 16,
                         fontWeight: FontWeight.bold,

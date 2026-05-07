@@ -127,6 +127,9 @@ class $AssetsImagesGen {
   AssetGenImage get spalshLogo =>
       const AssetGenImage('assets/images/spalsh_logo.png');
 
+  /// File path: assets/images/flash.png
+  AssetGenImage get flash => const AssetGenImage('assets/images/flash.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     apple,
@@ -139,6 +142,7 @@ class $AssetsImagesGen {
     onboardingone,
     onboardingthree,
     spalshLogo,
+    flash,
   ];
 }
 

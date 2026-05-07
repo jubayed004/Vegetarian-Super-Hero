@@ -19,8 +19,8 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final backgroundColor = isDark
-        ? AppColors.primaryText
-        : AppColors.brandHoverColor;
+        ? AppColors.darkPrimary
+        : AppColors.darkSurface;
 
     return Material(
       color: backgroundColor,
@@ -42,7 +42,10 @@ class CustomButton extends StatelessWidget {
     if (isLoading) {
       return const LoadingWidget(color: AppColors.white);
     } else {
-      return Text(text, style: context.headlineSmall);
+      return Text(
+        text,
+        style: context.headlineSmall.copyWith(color: AppColors.black),
+      );
     }
   }
 }

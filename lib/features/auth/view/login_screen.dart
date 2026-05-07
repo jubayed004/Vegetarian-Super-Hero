@@ -47,7 +47,10 @@ class LoginScreen extends StatelessWidget {
                   controller: controller.loginEmailController,
                   hintText: "Enter your email or username",
                   validator: TextFieldValidator.email(),
-                  prefixIcon: const Icon(Icons.email_outlined, color: AppColors.white),
+                  prefixIcon: const Icon(
+                    Icons.email_outlined,
+                    color: AppColors.white,
+                  ),
                 ),
                 const Gap(20),
                 CustomTextField(
@@ -56,7 +59,10 @@ class LoginScreen extends StatelessWidget {
                   hintText: "Enter your password",
                   isPassword: true,
                   validator: TextFieldValidator.password(),
-                  prefixIcon: const Icon(Icons.lock_outline, color: AppColors.white),
+                  prefixIcon: const Icon(
+                    Icons.lock_outline,
+                    color: AppColors.white,
+                  ),
                 ),
                 Align(
                   alignment: Alignment.centerRight,
@@ -66,7 +72,7 @@ class LoginScreen extends StatelessWidget {
                     },
                     child: Text(
                       AppStrings.forgetPassword.tr,
-                      style: context.labelMedium.copyWith(
+                      style: context.titleSmall.copyWith(
                         color: AppColors.white.withValues(alpha: 0.6),
                         decoration: TextDecoration.underline,
                       ),
@@ -77,23 +83,30 @@ class LoginScreen extends StatelessWidget {
                 CustomButton(
                   text: AppStrings.logIn.tr,
                   onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      // Handle Login
-                    }
+                    // if (formKey.currentState!.validate()) {
+                    //   // Handle Login
+                    // }
+                    AppRouter.route.goNamed(RoutePath.navScreen);
                   },
                 ),
                 const Gap(30),
                 Row(
                   children: [
-                    const Expanded(child: Divider(color: AppColors.white, thickness: 0.5)),
+                    const Expanded(
+                      child: Divider(color: AppColors.white, thickness: 0.5),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Text(
                         "o r",
-                        style: context.bodySmall.copyWith(color: AppColors.white),
+                        style: context.bodySmall.copyWith(
+                          color: AppColors.white,
+                        ),
                       ),
                     ),
-                    const Expanded(child: Divider(color: AppColors.white, thickness: 0.5)),
+                    const Expanded(
+                      child: Divider(color: AppColors.white, thickness: 0.5),
+                    ),
                   ],
                 ),
                 const Gap(30),
@@ -113,7 +126,9 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     Text(
                       AppStrings.dontHaveAnAccount.tr,
-                      style: context.bodyMedium.copyWith(color: AppColors.white),
+                      style: context.bodyMedium.copyWith(
+                        color: AppColors.white,
+                      ),
                     ),
                     TextButton(
                       onPressed: () {
@@ -122,7 +137,7 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         AppStrings.signUp.tr,
                         style: context.bodyMedium.copyWith(
-                          color: AppColors.primaryText,
+                          color: AppColors.darkPrimary,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -150,11 +165,7 @@ class _SocialButton extends StatelessWidget {
         border: Border.all(color: AppColors.white, width: 1),
         borderRadius: BorderRadius.circular(12),
       ),
-      child: SizedBox(
-        height: 30,
-        width: 30,
-        child: icon,
-      ),
+      child: SizedBox(height: 30, width: 30, child: icon),
     );
   }
 }

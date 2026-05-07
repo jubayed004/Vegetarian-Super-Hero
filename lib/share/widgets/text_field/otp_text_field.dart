@@ -22,7 +22,9 @@ class OtpTextField extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.borderColor),
+        border: Border.all(
+          color: isDark ? AppColors.darkBorder : AppColors.borderColor,
+        ),
       ),
     );
 
@@ -47,13 +49,13 @@ class OtpTextField extends StatelessWidget {
               defaultPinTheme: basePinTheme,
               focusedPinTheme: basePinTheme.copyWith(
                 decoration: basePinTheme.decoration?.copyWith(
-                  border: Border.all(color: AppColors.borderColor),
+                  border: Border.all(color: isDark ? AppColors.darkBorder : AppColors.borderColor),
                 ),
               ),
               submittedPinTheme: basePinTheme,
               errorPinTheme: basePinTheme.copyWith(
                 decoration: basePinTheme.decoration?.copyWith(
-                  color: AppColors.primaryText.withValues(alpha: 0.8),
+                  color: AppColors.darkPrimary.withValues(alpha: 0.8),
                 ),
               ),
               onChanged: (value) {
