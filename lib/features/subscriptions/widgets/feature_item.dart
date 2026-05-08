@@ -8,11 +8,7 @@ class FeatureItem extends StatelessWidget {
   final IconData icon;
   final String text;
 
-  const FeatureItem({
-    super.key,
-    required this.icon,
-    required this.text,
-  });
+  const FeatureItem({super.key, required this.icon, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -30,15 +26,7 @@ class FeatureItem extends StatelessWidget {
             child: Icon(icon, color: AppColors.darkPrimary, size: 20.r),
           ),
           Gap(16.w),
-          Expanded(
-            child: Text(
-              text,
-              style: context.bodyLarge.copyWith(
-                color: AppColors.textOffWhite,
-                fontSize: 16.sp,
-              ),
-            ),
-          ),
+          Expanded(child: Text(text, style: context.bodyLarge)),
           Icon(
             Icons.check_circle_outline,
             color: AppColors.darkPrimary,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
 import 'package:vegetarian_super_hero/core/router/route_path.dart';
 import 'package:vegetarian_super_hero/core/router/routes.dart';
 import 'package:vegetarian_super_hero/share/widgets/button/custom_button.dart';
@@ -24,14 +23,14 @@ class SubscriptionScreen extends StatelessWidget {
       appBar: AppBar(
         scrolledUnderElevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 20.r),
+          icon: Icon(Icons.arrow_back_ios, color: AppColors.white, size: 20.r),
           onPressed: () => AppRouter.route.pop(),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
           PopupMenuButton<String>(
-            icon: Icon(Icons.more_vert, color: Colors.white, size: 24.r),
+            icon: Icon(Icons.more_vert, color: AppColors.white, size: 24.r),
             color: AppColors.darkSurface,
             onSelected: (value) {
               // Handle selection
@@ -41,14 +40,14 @@ class SubscriptionScreen extends StatelessWidget {
                 value: 'manage',
                 child: Text(
                   AppStrings.manageSubscription.tr,
-                  style: context.bodyMedium.copyWith(color: Colors.white, fontSize: 14.sp),
+                  style: context.bodyMedium,
                 ),
               ),
               PopupMenuItem(
                 value: 'restore',
                 child: Text(
                   AppStrings.restoreSubscription.tr,
-                  style: context.bodyMedium.copyWith(color: Colors.white, fontSize: 14.sp),
+                  style: context.bodyMedium,
                 ),
               ),
             ],
@@ -60,7 +59,6 @@ class SubscriptionScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             children: [
-              const Gap(10),
               // YOUR PLAN IS READY Badge
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
@@ -68,7 +66,7 @@ class SubscriptionScreen extends StatelessWidget {
                   color: AppColors.badgeSuccessBg,
                   borderRadius: BorderRadius.circular(30.r),
                   border: Border.all(
-                    color: AppColors.darkPrimary.withOpacity(0.3),
+                    color: AppColors.darkPrimary.withValues(alpha: 0.3),
                     width: 1.5.w,
                   ),
                 ),
@@ -76,9 +74,6 @@ class SubscriptionScreen extends StatelessWidget {
                   AppStrings.yourPlanIsReady.tr.toUpperCase(),
                   style: context.labelSmall.copyWith(
                     color: AppColors.darkPrimary,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.5,
-                    fontSize: 12.sp,
                   ),
                 ),
               ),
@@ -87,14 +82,11 @@ class SubscriptionScreen extends StatelessWidget {
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
-                  style: context.headlineLarge.copyWith(
-                    fontSize: 40.sp,
-                    height: 1.1,
-                  ),
+                  style: context.headlineLarge,
                   children: [
                     const TextSpan(
                       text: "UNLOCK YOUR\n",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: AppColors.white),
                     ),
                     TextSpan(
                       text: "SYSTEM",
@@ -105,14 +97,8 @@ class SubscriptionScreen extends StatelessWidget {
               ),
               const Gap(8),
               // Precision Coaching Subtitle
-              Text(
-                AppStrings.precisionCoaching.tr,
-                style: context.bodyLarge.copyWith(
-                  color: AppColors.darkSecondaryText,
-                  fontSize: 18.sp,
-                ),
-              ),
-              const Gap(32),
+              Text(AppStrings.precisionCoaching.tr, style: context.bodyLarge),
+              const Gap(24),
               // Main Plan Card
               const SubscriptionPlanCard(),
               const Gap(20),
@@ -130,7 +116,7 @@ class SubscriptionScreen extends StatelessWidget {
               Text(
                 AppStrings.thenNoChargeUntilTrialEnds.tr,
                 style: context.bodySmall.copyWith(
-                  color: const Color(0xFF666666),
+                  color: AppColors.textGreyMuted,
                   fontSize: 14.sp,
                 ),
               ),
@@ -139,9 +125,24 @@ class SubscriptionScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Expanded(child: FooterItem(icon: Icons.lock_outline, text: AppStrings.secure.tr.replaceFirst("🔒 ", ""))),
-                  Expanded(child: FooterItem(icon: Icons.refresh, text: AppStrings.cancelAnytime.tr.replaceFirst("↩️ ", ""))),
-                  Expanded(child: FooterItem(icon: Icons.bolt, text: AppStrings.instantAccess.tr.replaceFirst("⚡ ", ""))),
+                  Expanded(
+                    child: FooterItem(
+                      icon: Icons.lock_outline,
+                      text: AppStrings.secure.tr.replaceFirst("🔒 ", ""),
+                    ),
+                  ),
+                  Expanded(
+                    child: FooterItem(
+                      icon: Icons.refresh,
+                      text: AppStrings.cancelAnytime.tr.replaceFirst("↩️ ", ""),
+                    ),
+                  ),
+                  Expanded(
+                    child: FooterItem(
+                      icon: Icons.bolt,
+                      text: AppStrings.instantAccess.tr.replaceFirst("⚡ ", ""),
+                    ),
+                  ),
                 ],
               ),
               const Gap(32),
@@ -151,7 +152,7 @@ class SubscriptionScreen extends StatelessWidget {
                   AppStrings.subscriptionAutoRenewDisclaimer.tr,
                   textAlign: TextAlign.center,
                   style: context.bodySmall.copyWith(
-                    color: const Color(0xFF666666),
+                    color: AppColors.textGreyMuted,
                     fontSize: 11.sp,
                     height: 1.4,
                   ),

@@ -67,4 +67,12 @@ class AppColors {
   static const Color textGreyMuted = Color(0xFF666666);
   static const Color dividerGrey = Color(0xFF444444);
   static const Color textOffWhite = Color(0xFFEEEEEE);
+
+  // ==============================
+  // DEEP BACKGROUND COLORS (For Containers/Icons)
+  // ==============================
+  static const Color deepGreen = Color(0xFF1B2E15);
+  static const Color deepOrange = Color(0xFF2E2415);
+  static const Color deepYellow = Color(0xFF2E2B15);
+  static const Color deepGrey = Color(0xFF252525);
 }

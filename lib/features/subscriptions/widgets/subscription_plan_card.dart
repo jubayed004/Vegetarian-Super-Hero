@@ -14,17 +14,17 @@ class SubscriptionPlanCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: AppColors.surfaceDeep,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: AppColors.goldAccent.withOpacity(0.6),
+          color: AppColors.goldAccent.withValues(alpha: 0.6),
           width: 1.5.w,
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.goldAccent.withOpacity(0.1),
+            color: AppColors.goldAccent.withValues(alpha: 0.1),
             blurRadius: 40.r,
             spreadRadius: -10.r,
           ),
@@ -39,25 +39,19 @@ class SubscriptionPlanCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: AppColors.goldAccent.withOpacity(0.4),
+                color: AppColors.goldAccent.withValues(alpha: 0.4),
                 width: 1.w,
               ),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  Icons.star,
-                  color: AppColors.goldAccent,
-                  size: 14.r,
-                ),
+                Icon(Icons.star, color: AppColors.goldAccent, size: 14.r),
                 Gap(6.w),
                 Text(
                   AppStrings.mostPopular.tr,
                   style: context.labelSmall.copyWith(
                     color: AppColors.goldAccent,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.0,
                   ),
                 ),
               ],
@@ -70,7 +64,7 @@ class SubscriptionPlanCard extends StatelessWidget {
               Text(
                 "\$150",
                 style: context.headlineLarge.copyWith(
-                  color: Colors.white,
+                  color: AppColors.white,
                   fontSize: 64.sp,
                   height: 1.0,
                 ),
@@ -99,21 +93,33 @@ class SubscriptionPlanCard extends StatelessWidget {
             ],
           ),
           Gap(32.h),
-          Text(
-            AppStrings.trialInfo.tr,
-            style: context.bodySmall.copyWith(
-              color: const Color(0xFF666666),
-              fontSize: 14.sp,
-            ),
-          ),
+          Text(AppStrings.trialInfo.tr, style: context.bodySmall),
           Gap(32.h),
           // Features List
-          FeatureItem(icon: Icons.bolt, text: AppStrings.aiBuiltPersonalizedNutritionPlan.tr),
-          FeatureItem(icon: Icons.refresh, text: AppStrings.weeklyAdaptivePlanAdjustments.tr),
-          FeatureItem(icon: Icons.eco, text: AppStrings.pushPullLegsCustomTraining.tr),
-          FeatureItem(icon: Icons.chat_bubble_outline, text: AppStrings.coachingGradeWeeklyFeedbackSystem.tr),
-          FeatureItem(icon: Icons.refresh, text: AppStrings.upTo3AiPlanRegenerations.tr),
-          FeatureItem(icon: Icons.star_border, text: AppStrings.prioritySupportNewFeatureAccess.tr),
+          FeatureItem(
+            icon: Icons.bolt,
+            text: AppStrings.aiBuiltPersonalizedNutritionPlan.tr,
+          ),
+          FeatureItem(
+            icon: Icons.refresh,
+            text: AppStrings.weeklyAdaptivePlanAdjustments.tr,
+          ),
+          FeatureItem(
+            icon: Icons.eco,
+            text: AppStrings.pushPullLegsCustomTraining.tr,
+          ),
+          FeatureItem(
+            icon: Icons.chat_bubble_outline,
+            text: AppStrings.coachingGradeWeeklyFeedbackSystem.tr,
+          ),
+          FeatureItem(
+            icon: Icons.refresh,
+            text: AppStrings.upTo3AiPlanRegenerations.tr,
+          ),
+          FeatureItem(
+            icon: Icons.star_border,
+            text: AppStrings.prioritySupportNewFeatureAccess.tr,
+          ),
         ],
       ),
     );

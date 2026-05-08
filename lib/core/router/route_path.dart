@@ -12,12 +12,7 @@ class RoutePath {
   static const String forgetPasswordScreen = 'forgetPasswordScreen';
   static const String forgetOtpScreen = 'forgetOtpScreen';
   static const String resetPasswordScreen = 'resetPasswordScreen';
-  static const String welcomeBackScreen = 'welcomeBackScreen';
-  static const String homeScreen = 'homeScreen';
-  static const String quickSearchScreen = 'quickSearchScreen';
-  static const String resultScreen = 'resultScreen';
-  static const String resultSummaryScreen = 'resultSummaryScreen';
-  static const String saveScreen = 'saveScreen';
+
   static const String profileScreen = 'profileScreen';
   static const String editProfileScreen = 'editProfileScreen';
   static const String settingScreen = 'settingScreen';
@@ -25,11 +20,11 @@ class RoutePath {
   static const String contactSupportScreen = 'contactSupportScreen';
   static const String termsAndConditionScreen = 'termsAndConditionScreen';
   static const String privacyPolicyScreen = 'privacyPolicyScreen';
-  static const String referenceScreen = 'referenceScreen';
-  static const String saveDetailsScreen = 'saveDetailsScreen';
+
   static const String processingPaymentScreen = 'processingPaymentScreen';
   static const String paymentSuccessScreen = 'paymentSuccessScreen';
   static const String subscriptionScreen = 'subscriptionScreen';
   static const String activatePlanScreen = 'activatePlanScreen';
   static const String navScreen = 'navScreen';
+  static const String notificationScreen = 'notificationScreen';
 }

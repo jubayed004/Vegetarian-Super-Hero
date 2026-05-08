@@ -8,7 +8,14 @@ import 'package:vegetarian_super_hero/features/auth/view/login_screen.dart';
 import 'package:vegetarian_super_hero/features/auth/view/reset_password_screen.dart';
 import 'package:vegetarian_super_hero/features/auth/view/sign_up_screen.dart';
 import 'package:vegetarian_super_hero/features/input_info/view/input_info_screen.dart';
+import 'package:vegetarian_super_hero/features/notification/view/notification_screen.dart';
 import 'package:vegetarian_super_hero/features/onboarding/view/onboarding_screen.dart';
+import 'package:vegetarian_super_hero/features/other/view/contact_and_support_screen.dart';
+import 'package:vegetarian_super_hero/features/other/view/change_password_screen.dart';
+import 'package:vegetarian_super_hero/features/other/view/privacy_policy_screen.dart';
+import 'package:vegetarian_super_hero/features/other/view/terms_of_service_screen.dart';
+import 'package:vegetarian_super_hero/features/profile/view/edit_profile_screen.dart';
+import 'package:vegetarian_super_hero/features/profile/view/profile_screen.dart';
 import 'package:vegetarian_super_hero/features/splash/view/splash_screen.dart';
 import 'package:vegetarian_super_hero/utils/extension/base_extension.dart';
 import 'package:vegetarian_super_hero/features/activate_plan/view/activate_plan_screen.dart';
@@ -22,7 +29,7 @@ class AppRouter {
       GlobalKey<NavigatorState>();
 
   static final GoRouter initRoute = GoRouter(
-    initialLocation: RoutePath.splashScreen.addBasePath,
+    initialLocation: RoutePath.navScreen.addBasePath,
     debugLogDiagnostics: true,
     navigatorKey: navigatorKey,
     routes: [
@@ -190,6 +197,16 @@ class AppRouter {
           );
         },
       ),
+      GoRoute(
+        name: RoutePath.notificationScreen,
+        path: RoutePath.notificationScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: NotificationScreen(),
+            state: state,
+          );
+        },
+      ),
       //
       // GoRoute(
       //   name: RoutePath.welcomeBackScreen,
@@ -257,26 +274,26 @@ class AppRouter {
       //     );
       //   },
       // ),
-      // GoRoute(
-      //   name: RoutePath.profileScreen,
-      //   path: RoutePath.profileScreen.addBasePath,
-      //   pageBuilder: (context, state) {
-      //     return _buildPageWithAnimation(
-      //       child: const ProfileScreen(),
-      //       state: state,
-      //     );
-      //   },
-      // ),
-      // GoRoute(
-      //   name: RoutePath.editProfileScreen,
-      //   path: RoutePath.editProfileScreen.addBasePath,
-      //   pageBuilder: (context, state) {
-      //     return _buildPageWithAnimation(
-      //       child: const EditProfileScreen(),
-      //       state: state,
-      //     );
-      //   },
-      // ),
+      GoRoute(
+        name: RoutePath.profileScreen,
+        path: RoutePath.profileScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const ProfileScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.editProfileScreen,
+        path: RoutePath.editProfileScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const EditProfileScreen(),
+            state: state,
+          );
+        },
+      ),
       // GoRoute(
       //   name: RoutePath.settingScreen,
       //   path: RoutePath.settingScreen.addBasePath,
@@ -287,46 +304,46 @@ class AppRouter {
       //     );
       //   },
       // ),
-      // GoRoute(
-      //   name: RoutePath.changePasswordScreen,
-      //   path: RoutePath.changePasswordScreen.addBasePath,
-      //   pageBuilder: (context, state) {
-      //     return _buildPageWithAnimation(
-      //       child: const ChangePasswordScreen(),
-      //       state: state,
-      //     );
-      //   },
-      // ),
-      // GoRoute(
-      //   name: RoutePath.contactSupportScreen,
-      //   path: RoutePath.contactSupportScreen.addBasePath,
-      //   pageBuilder: (context, state) {
-      //     return _buildPageWithAnimation(
-      //       child: const ContactAndSupportScreen(),
-      //       state: state,
-      //     );
-      //   },
-      // ),
-      // GoRoute(
-      //   name: RoutePath.termsAndConditionScreen,
-      //   path: RoutePath.termsAndConditionScreen.addBasePath,
-      //   pageBuilder: (context, state) {
-      //     return _buildPageWithAnimation(
-      //       child: const TermsAndConditionScreen(),
-      //       state: state,
-      //     );
-      //   },
-      // ),
-      // GoRoute(
-      //   name: RoutePath.privacyPolicyScreen,
-      //   path: RoutePath.privacyPolicyScreen.addBasePath,
-      //   pageBuilder: (context, state) {
-      //     return _buildPageWithAnimation(
-      //       child: const PrivacyPolicyScreen(),
-      //       state: state,
-      //     );
-      //   },
-      // ),
+      GoRoute(
+        name: RoutePath.changePasswordScreen,
+        path: RoutePath.changePasswordScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const ChangePasswordScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.contactSupportScreen,
+        path: RoutePath.contactSupportScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const ContactAndSupportScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.termsAndConditionScreen,
+        path: RoutePath.termsAndConditionScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const TermsAndConditionScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.privacyPolicyScreen,
+        path: RoutePath.privacyPolicyScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const PrivacyPolicyScreen(),
+            state: state,
+          );
+        },
+      ),
       // GoRoute(
       //   name: RoutePath.referenceScreen,
       //   path: RoutePath.referenceScreen.addBasePath,

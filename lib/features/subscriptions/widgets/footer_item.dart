@@ -8,11 +8,7 @@ class FooterItem extends StatelessWidget {
   final IconData icon;
   final String text;
 
-  const FooterItem({
-    super.key,
-    required this.icon,
-    required this.text,
-  });
+  const FooterItem({super.key, required this.icon, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +21,7 @@ class FooterItem extends StatelessWidget {
             text,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: context.labelMedium.copyWith(
-              color: AppColors.textGreyMuted,
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-            ),
+            style: context.labelMedium.copyWith(color: AppColors.textGreyMuted),
           ),
         ),
       ],

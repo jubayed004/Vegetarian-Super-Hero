@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:vegetarian_super_hero/features/other/controller/other_controller.dart';
 
 import 'package:vegetarian_super_hero/share/controller/language_controller.dart';
 import 'package:vegetarian_super_hero/features/auth/controller/auth_controller.dart';
@@ -10,8 +11,8 @@ void initGetx() {
   // // Get.lazyPut(() => OtpController(), fenix: true);
   // // Get.lazyPut(() => ResetPasswordController(), fenix: true);
   // //
-  // // //Others
-  // Get.lazyPut(() => OtherController(), fenix: true);
+  // //Others
+  Get.lazyPut(() => OtherController(), fenix: true);
   // // Get.lazyPut(() => OnboardingController(), fenix: true);
   // // Get.lazyPut(() => CommonController(), fenix: true);
   // //

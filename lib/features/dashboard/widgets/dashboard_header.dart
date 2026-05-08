@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:vegetarian_super_hero/core/router/route_path.dart';
 import 'package:vegetarian_super_hero/utils/app_strings/app_strings.dart';
 import 'package:vegetarian_super_hero/utils/color/app_colors.dart';
 import 'package:get/get.dart';
@@ -25,19 +27,24 @@ class DashboardHeader extends StatelessWidget {
             Text("ABHIK PATEL", style: context.headlineLarge),
           ],
         ),
-        Container(
-          padding: EdgeInsets.all(10.r),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: AppColors.dividerGrey.withValues(alpha: 0.3),
+        GestureDetector(
+          onTap: () {
+            context.pushNamed(RoutePath.notificationScreen);
+          },
+          child: Container(
+            padding: EdgeInsets.all(10.r),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: AppColors.dividerGrey.withValues(alpha: 0.3),
+              ),
+              color: AppColors.surfaceDeep,
             ),
-            color: AppColors.surfaceDeep,
-          ),
-          child: Icon(
-            Icons.notifications_none_rounded,
-            color: Colors.white,
-            size: 24.r,
+            child: Icon(
+              Icons.notifications_none_rounded,
+              color: Colors.white,
+              size: 24.r,
+            ),
           ),
         ),
       ],

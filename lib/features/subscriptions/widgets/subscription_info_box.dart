@@ -28,12 +28,11 @@ class SubscriptionInfoBox extends StatelessWidget {
           Gap(12.w),
           Expanded(
             child: Text(
-              AppStrings.vssIsACoachingSystemThatAdaptsWeeklyBasedOnYourRealProgressAndCheckIns.tr.replaceFirst("💡 ", ""),
-              style: context.bodyMedium.copyWith(
-                color: AppColors.textGreyLight,
-                fontSize: 13.sp,
-                height: 1.5,
-              ),
+              AppStrings
+                  .vssIsACoachingSystemThatAdaptsWeeklyBasedOnYourRealProgressAndCheckIns
+                  .tr
+                  .replaceFirst("💡 ", ""),
+              style: context.bodyMedium,
             ),
           ),
         ],

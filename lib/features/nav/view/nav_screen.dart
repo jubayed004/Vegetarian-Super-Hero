@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vegetarian_super_hero/features/dashboard/view/dashboard_screen.dart';
-import 'package:vegetarian_super_hero/share/widgets/network_image/custom_network_image.dart';
+import 'package:vegetarian_super_hero/features/history/view/history_screen.dart';
+import 'package:vegetarian_super_hero/features/plan/view/my_plan_screen.dart';
+import 'package:vegetarian_super_hero/features/profile/view/profile_screen.dart';
 import 'package:vegetarian_super_hero/utils/color/app_colors.dart';
 
 class NavScreen extends StatefulWidget {
@@ -17,10 +19,9 @@ class _NavScreenState extends State<NavScreen> {
 
   final List<Widget> _pages = [
     const DashboardScreen(),
-    const Center(child: Text("Plan Screen", style: TextStyle(color: Colors.white))),
-    const Center(child: Text("Progress Screen", style: TextStyle(color: Colors.white))),
-    const Center(child: Text("History Screen", style: TextStyle(color: Colors.white))),
-    const Center(child: Text("Profile Screen", style: TextStyle(color: Colors.white))),
+    const MyPlanScreen(),
+    const HistoryScreen(),
+    const ProfileScreen()
   ];
 
   @override
@@ -43,7 +44,7 @@ class _NavScreenState extends State<NavScreen> {
               color: const Color(0xff000000),
               border: Border(
                 top: BorderSide(
-                  color: AppColors.dividerGrey.withOpacity(0.1),
+                  color: AppColors.dividerGrey.withValues(alpha: 0.3),
                   width: 0.5,
                 ),
               ),
@@ -78,15 +79,11 @@ class _NavScreenState extends State<NavScreen> {
                   label: "Plan",
                 ),
                 BottomNavigationBarItem(
-                  icon: _buildIcon(Icons.trending_up_rounded, 2, selectedIndex),
-                  label: "Progress",
-                ),
-                BottomNavigationBarItem(
-                  icon: _buildIcon(Icons.access_time_rounded, 3, selectedIndex),
+                  icon: _buildIcon(Icons.access_time_rounded, 2, selectedIndex),
                   label: "History",
                 ),
                 BottomNavigationBarItem(
-                  icon: _buildIcon(Icons.person_outline_rounded, 4, selectedIndex),
+                  icon: _buildIcon(Icons.person_outline_rounded, 3, selectedIndex),
                   label: "Profile",
                 ),
               ],
