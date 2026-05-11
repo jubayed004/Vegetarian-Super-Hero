@@ -7,26 +7,27 @@ class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback? onTap;
   final bool isLoading;
+  final IconData? icon;
 
   const CustomButton({
     required this.text,
     this.onTap,
     this.isLoading = false,
+    this.icon,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final backgroundColor = isDark
-        ? AppColors.darkPrimary
-        : AppColors.darkSurface;
+    final backgroundColor = isDark ? AppColors.darkPrimary : AppColors.darkSurface;
 
     return Material(
       color: backgroundColor,
       borderRadius: BorderRadius.circular(8),
       child: InkWell(
         onTap: isLoading ? null : onTap,
+        borderRadius: BorderRadius.circular(8),
         child: Container(
           height: 56,
           width: double.infinity,
@@ -42,9 +43,25 @@ class CustomButton extends StatelessWidget {
     if (isLoading) {
       return const LoadingWidget(color: AppColors.white);
     } else {
-      return Text(
-        text,
-        style: context.headlineSmall.copyWith(color: AppColors.black),
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (icon != null) ...[
+            Transform.rotate(
+              angle: -0.5, // Tilted dumbbell look
+              child: Icon(icon, color: AppColors.black, size: 24),
+            ),
+            const SizedBox(width: 10),
+          ],
+          Text(
+            text.toUpperCase(),
+            style: context.headlineSmall.copyWith(
+              color: AppColors.black,
+              fontWeight: FontWeight.w900,
+              fontSize: 20,
+            ),
+          ),
+        ],
       );
     }
   }

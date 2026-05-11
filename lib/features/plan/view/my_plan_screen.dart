@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:vegetarian_super_hero/features/plan/controller/plan_controller.dart';
 import 'package:vegetarian_super_hero/utils/app_strings/app_strings.dart';
 import 'package:vegetarian_super_hero/utils/color/app_colors.dart';
 import 'package:vegetarian_super_hero/utils/extension/base_extension.dart';
@@ -9,88 +10,95 @@ import '../widgets/nutrition_summary_box.dart';
 import '../widgets/meal_widgets.dart';
 import '../widgets/training_widgets.dart';
 
-class MyPlanScreen extends StatefulWidget {
+class MyPlanScreen extends StatelessWidget {
   const MyPlanScreen({super.key});
 
   @override
-  State<MyPlanScreen> createState() => _MyPlanScreenState();
-}
-
-class _MyPlanScreenState extends State<MyPlanScreen> {
-  final ValueNotifier<int> _selectedTab = ValueNotifier<int>(0);
-
-  @override
-  void dispose() {
-    _selectedTab.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    // Injecting the PlanController
+    final controller = Get.put(PlanController());
+
     return Scaffold(
-      appBar: AppBar(
-        scrolledUnderElevation: 0,
-        centerTitle: false,
-        title: Text(
-          AppStrings.myPlan.tr,
-          style: context.headlineMedium.copyWith(
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.5,
+      body: SafeArea(
+        child: Obx(
+          () => CustomScrollView(
+            slivers: [
+              // Custom App Bar
+              SliverAppBar(
+                floating: true,
+                pinned: false,
+                backgroundColor: AppColors.darkBackground,
+                elevation: 0,
+                scrolledUnderElevation: 0,
+                centerTitle: false,
+                title: Text(
+                  AppStrings.myPlan.tr,
+                  style: context.headlineMedium.copyWith(
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.5,
+                  ),
+                ),
+              ),
+
+              // Custom Tab Switcher
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          _buildTabItem(
+                            context,
+                            0,
+                            AppStrings.nutrition.tr,
+                            Icons.restaurant,
+                            controller.selectedTab,
+                          ),
+                          Gap(12.w),
+                          _buildTabItem(
+                            context,
+                            1,
+                            AppStrings.training.tr,
+                            Icons.fitness_center,
+                            controller.selectedTab,
+                          ),
+                        ],
+                      ),
+                      Gap(16.h),
+                      Divider(
+                        color: AppColors.darkBorder.withValues(alpha: 0.5),
+                        height: 1,
+                      ),
+                      Gap(24.h),
+                    ],
+                  ),
+                ),
+              ),
+
+              // Main Content
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                sliver: controller.selectedTab == 0
+                    ? _buildNutritionSliver()
+                    : _buildTrainingSliver(),
+              ),
+
+              SliverToBoxAdapter(child: Gap(40.h)),
+            ],
           ),
         ),
-      ),
-      body: ValueListenableBuilder<int>(
-        valueListenable: _selectedTab,
-        builder: (context, activeTab, _) {
-          return Column(
-            children: [
-              // Custom Tab Switcher
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Row(
-                  children: [
-                    _buildTabItem(
-                      0,
-                      AppStrings.nutrition.tr,
-                      Icons.restaurant,
-                      activeTab,
-                    ),
-                    Gap(12.w),
-                    _buildTabItem(
-                      1,
-                      AppStrings.training.tr,
-                      Icons.fitness_center,
-                      activeTab,
-                    ),
-                  ],
-                ),
-              ),
-              Gap(16.h),
-              Divider(
-                color: AppColors.darkBorder.withValues(alpha: 0.5),
-                height: 1,
-              ),
-              Gap(24.h),
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: activeTab == 0
-                      ? _buildNutritionView()
-                      : _buildTrainingView(),
-                ),
-              ),
-            ],
-          );
-        },
       ),
     );
   }
 
-  Widget _buildTabItem(int index, String label, IconData icon, int activeTab) {
+  Widget _buildTabItem(BuildContext context, int index, String label,
+      IconData icon, int activeTab) {
     bool isActive = activeTab == index;
+    final controller = PlanController.to;
     return Expanded(
       child: GestureDetector(
-        onTap: () => _selectedTab.value = index,
+        onTap: () => controller.changeTab(index),
         child: Container(
           height: 52.h,
           decoration: BoxDecoration(
@@ -126,9 +134,9 @@ class _MyPlanScreenState extends State<MyPlanScreen> {
     );
   }
 
-  Widget _buildNutritionView() {
-    return Column(
-      children: [
+  Widget _buildNutritionSliver() {
+    return SliverList(
+      delegate: SliverChildListDelegate([
         const NutritionSummaryBox(),
         Gap(24.h),
         MealSection(
@@ -167,8 +175,36 @@ class _MyPlanScreenState extends State<MyPlanScreen> {
           ],
         ),
         MealSection(
+          title: "Mid-Morning",
+          time: "10:30 AM",
+          calories: "310",
+          items: const [
+            FoodItemTile(
+              name: "Cottage Cheese",
+              quantity: "150g",
+              cals: "150",
+              macro: "P:18g",
+              macroType: "protein",
+            ),
+            FoodItemTile(
+              name: "Apple",
+              quantity: "1 medium",
+              cals: "95",
+              macro: "P:0g",
+              macroType: "carb",
+            ),
+            FoodItemTile(
+              name: "Walnuts",
+              quantity: "10g",
+              cals: "65",
+              macro: "P:1g",
+              macroType: "fat",
+            ),
+          ],
+        ),
+        MealSection(
           title: AppStrings.lunch.tr,
-          time: "1:30 PM",
+          time: "1:00 PM",
           calories: "680",
           items: const [
             FoodItemTile(
@@ -194,14 +230,76 @@ class _MyPlanScreenState extends State<MyPlanScreen> {
             ),
           ],
         ),
-        Gap(20.h),
-      ],
+        MealSection(
+          title: "Pre-Workout",
+          time: "4:30 PM",
+          calories: "350",
+          items: const [
+            FoodItemTile(
+              name: "Protein Shake",
+              quantity: "1 scoop",
+              cals: "120",
+              macro: "P:24g",
+              macroType: "protein",
+            ),
+            FoodItemTile(
+              name: "Banana",
+              quantity: "1 large",
+              cals: "105",
+              macro: "P:1g",
+              macroType: "carb",
+            ),
+            FoodItemTile(
+              name: "Rice Cakes",
+              quantity: "3 cakes",
+              cals: "125",
+              macro: "P:3g",
+              macroType: "carb",
+            ),
+          ],
+        ),
+        MealSection(
+          title: AppStrings.dinner.tr,
+          time: "7:30 PM",
+          calories: "540",
+          items: const [
+            FoodItemTile(
+              name: "Lentil Pasta",
+              quantity: "150g",
+              cals: "350",
+              macro: "P:25g",
+              macroType: "protein",
+            ),
+            FoodItemTile(
+              name: "Tomato Sauce",
+              quantity: "100g",
+              cals: "80",
+              macro: "P:2g",
+              macroType: "carb",
+            ),
+            FoodItemTile(
+              name: "Spinach",
+              quantity: "50g",
+              cals: "20",
+              macro: "P:2g",
+              macroType: "carb",
+            ),
+            FoodItemTile(
+              name: "Olive Oil",
+              quantity: "10g",
+              cals: "90",
+              macro: "P:0g",
+              macroType: "fat",
+            ),
+          ],
+        ),
+      ]),
     );
   }
 
-  Widget _buildTrainingView() {
-    return Column(
-      children: [
+  Widget _buildTrainingSliver() {
+    return SliverList(
+      delegate: SliverChildListDelegate([
         const TrainingInfoBox(),
         Gap(24.h),
         const WorkoutCard(
@@ -243,8 +341,26 @@ class _MyPlanScreenState extends State<MyPlanScreen> {
             ),
           ],
         ),
-        Gap(20.h),
-      ],
+        const WorkoutCard(
+          day: "Friday",
+          type: "LEGS",
+          duration: "75 min",
+          exercises: [
+            ExerciseTile(
+              name: "Barbell Squats",
+              details: "4 sets · 6-10 reps · 120s rest",
+            ),
+            ExerciseTile(
+              name: "Leg Press",
+              details: "3 sets · 10-12 reps · 90s rest",
+            ),
+            ExerciseTile(
+              name: "Leg Curls",
+              details: "3 sets · 12-15 reps · 60s rest",
+            ),
+          ],
+        ),
+      ]),
     );
   }
 }

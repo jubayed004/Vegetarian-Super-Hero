@@ -77,12 +77,13 @@ class ForgetPassword extends StatelessWidget {
                 CustomButton(
                   text: "SEND OTP",
                   onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      AppRouter.route.pushNamed(
-                        RoutePath.forgetOtpScreen,
-                        extra: controller.forgotEmailController.text,
-                      );
-                    }
+                    // if (formKey.currentState!.validate()) {
+
+                    // }
+                    AppRouter.route.pushNamed(
+                      RoutePath.forgetOtpScreen,
+                      extra: controller.forgotEmailController.text,
+                    );
                   },
                 ),
               ],

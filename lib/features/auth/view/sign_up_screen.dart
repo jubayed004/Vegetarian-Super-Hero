@@ -138,7 +138,7 @@ class SignUpScreen extends StatelessWidget {
 
                     // }
                     // Handle SignUp
-                    AppRouter.route.pushNamed(RoutePath.inputInfoScreen);
+                    AppRouter.route.pushNamed(RoutePath.activeOtpScreen);
                   },
                 ),
                 const Gap(30),

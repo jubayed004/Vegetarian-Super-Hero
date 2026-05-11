@@ -16,10 +16,8 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.darkBackground,
       appBar: AppBar(
-        backgroundColor: AppColors.darkBackground,
-        elevation: 0,
+        scrolledUnderElevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: AppColors.white, size: 18.r),
           onPressed: () => context.pop(),

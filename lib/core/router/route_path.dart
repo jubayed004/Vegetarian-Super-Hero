@@ -27,4 +27,5 @@ class RoutePath {
   static const String activatePlanScreen = 'activatePlanScreen';
   static const String navScreen = 'navScreen';
   static const String notificationScreen = 'notificationScreen';
+  static const String trainingVideoScreen = 'trainingVideoScreen';
 }

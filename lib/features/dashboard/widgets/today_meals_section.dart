@@ -27,28 +27,15 @@ class TodayMealsSection extends StatelessWidget {
               Row(
                 children: [
                   Icon(
-                    Icons.restaurant_menu_rounded,
-                    color: AppColors.yellowAccent.withValues(alpha: 0.8),
+                    Icons.restaurant_rounded,
+                    color: AppColors.yellowAccent,
                     size: 22.r,
                   ),
                   Gap(10.w),
-                  Text(
-                    AppStrings.todaysMeals.tr,
-                    style: context.titleMedium.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.sp,
-                    ),
-                  ),
+                  Text(AppStrings.todaysMeals.tr, style: context.headlineSmall),
                 ],
               ),
-              Text(
-                AppStrings.monday.tr,
-                style: context.bodySmall.copyWith(
-                  color: AppColors.textGrey.withValues(alpha: 0.6),
-                  fontSize: 14.sp,
-                ),
-              ),
+              Text(AppStrings.monday.tr, style: context.bodySmall),
             ],
           ),
           Gap(20.h),
@@ -80,7 +67,7 @@ class TodayMealsSection extends StatelessWidget {
   ) {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 14.h),
+        padding: EdgeInsets.symmetric(vertical: 16.h),
         decoration: BoxDecoration(
           color: Colors.black.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(12.r),
@@ -90,22 +77,9 @@ class TodayMealsSection extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(
-              value,
-              style: context.titleMedium.copyWith(
-                color: color,
-                fontWeight: FontWeight.bold,
-                fontSize: 18.sp,
-              ),
-            ),
+            Text(value, style: context.titleMedium.copyWith(color: color)),
             Gap(4.h),
-            Text(
-              label,
-              style: context.bodySmall.copyWith(
-                color: AppColors.textGrey.withValues(alpha: 0.6),
-                fontSize: 12.sp,
-              ),
-            ),
+            Text(label, style: context.bodySmall),
           ],
         ),
       ),
@@ -119,35 +93,32 @@ class TodayMealsSection extends StatelessWidget {
     String cals,
   ) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16.h),
+      padding: EdgeInsets.only(bottom: 20.h),
       child: Row(
         children: [
           SizedBox(
-            width: 50.w,
+            width: 60.w,
             child: Text(time, style: context.bodySmall),
           ),
-          Gap(8.w),
           Container(
             height: 10.r,
             width: 10.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: AppColors.dividerGrey.withValues(alpha: 0.3),
-                width: 1.5,
+                color: AppColors.dividerGrey.withValues(alpha: 0.5),
+                width: 2,
               ),
             ),
           ),
           Gap(16.w),
-          Expanded(
-            child: Text(
-              name,
-              style: context.bodyMedium.copyWith(color: Colors.white),
-            ),
-          ),
+          Expanded(child: Text(name, style: context.bodyMedium)),
           Text(
             cals,
-            style: context.bodySmall.copyWith(color: AppColors.textGrey),
+            style: context.bodySmall.copyWith(
+              color: AppColors.textGrey,
+              fontSize: 14.sp,
+            ),
           ),
         ],
       ),

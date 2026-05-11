@@ -109,9 +109,10 @@ class ResetPasswordScreen extends StatelessWidget {
                 CustomButton(
                   text: AppStrings.savePassword.tr,
                   onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      context.go(RoutePath.loginScreen);
-                    }
+                    // if (formKey.currentState!.validate()) {
+
+                    // }
+                    context.go(RoutePath.loginScreen);
                   },
                 ),
               ],

@@ -43,9 +43,24 @@ class NutritionSummaryBox extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildMacroLabel(AppColors.darkPrimary, AppStrings.protein.tr, "180g", context),
-              _buildMacroLabel(AppColors.yellowAccent, AppStrings.carbs.tr, "280g", context),
-              _buildMacroLabel(AppColors.orangeAccent, AppStrings.fat.tr, "65g", context),
+              _buildMacroLabel(
+                AppColors.darkPrimary,
+                AppStrings.protein.tr,
+                "180g",
+                context,
+              ),
+              _buildMacroLabel(
+                AppColors.yellowAccent,
+                AppStrings.carbs.tr,
+                "280g",
+                context,
+              ),
+              _buildMacroLabel(
+                AppColors.orangeAccent,
+                AppStrings.fat.tr,
+                "65g",
+                context,
+              ),
             ],
           ),
         ],
@@ -66,7 +81,12 @@ class NutritionSummaryBox extends StatelessWidget {
     );
   }
 
-  Widget _buildMacroLabel(Color color, String label, String value, BuildContext context) {
+  Widget _buildMacroLabel(
+    Color color,
+    String label,
+    String value,
+    BuildContext context,
+  ) {
     return Row(
       children: [
         Container(
@@ -75,14 +95,7 @@ class NutritionSummaryBox extends StatelessWidget {
           decoration: BoxDecoration(color: color, shape: BoxShape.circle),
         ),
         Gap(6.w),
-        Text(
-          "$label: $value",
-          style: context.labelSmall.copyWith(
-            color: AppColors.darkSecondaryText,
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+        Text("$label: $value", style: context.labelSmall),
       ],
     );
   }

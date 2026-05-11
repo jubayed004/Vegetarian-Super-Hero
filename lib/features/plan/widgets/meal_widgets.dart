@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:vegetarian_super_hero/utils/app_strings/app_strings.dart';
 import 'package:vegetarian_super_hero/utils/color/app_colors.dart';
 import 'package:vegetarian_super_hero/utils/extension/base_extension.dart';
+import '../../../share/widgets/custom_buttom_sheet/custom_buttom_sheet.dart';
 
 class MealSection extends StatelessWidget {
   final String title;
@@ -130,26 +131,30 @@ class FoodItemTile extends StatelessWidget {
             ),
           ),
           Gap(12.w),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-            decoration: BoxDecoration(
-              color: AppColors.darkPrimary.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(4.r),
-              border: Border.all(color: AppColors.darkPrimary.withValues(alpha: 0.3)),
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.refresh, color: AppColors.darkPrimary, size: 12.r),
-                Gap(4.w),
-                Text(
-                  AppStrings.swap.tr,
-                  style: context.labelSmall.copyWith(
-                    color: AppColors.darkPrimary,
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.bold,
+          GestureDetector(
+            onTap: () => showSwapMealModal(context, name),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                color: AppColors.darkPrimary.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(4.r),
+                border: Border.all(
+                    color: AppColors.darkPrimary.withValues(alpha: 0.3)),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.refresh, color: AppColors.darkPrimary, size: 12.r),
+                  Gap(4.w),
+                  Text(
+                    AppStrings.swap.tr,
+                    style: context.labelSmall.copyWith(
+                      color: AppColors.darkPrimary,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

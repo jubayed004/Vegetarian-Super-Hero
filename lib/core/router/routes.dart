@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vegetarian_super_hero/core/router/route_path.dart';
 import 'package:vegetarian_super_hero/features/auth/view/active_otp_screen.dart';
 import 'package:vegetarian_super_hero/features/auth/view/auth_selection_screen.dart';
+import 'package:vegetarian_super_hero/features/auth/view/forget_otp_screen.dart';
 import 'package:vegetarian_super_hero/features/auth/view/forget_password.dart';
 import 'package:vegetarian_super_hero/features/auth/view/login_screen.dart';
 import 'package:vegetarian_super_hero/features/auth/view/reset_password_screen.dart';
@@ -14,6 +15,7 @@ import 'package:vegetarian_super_hero/features/other/view/contact_and_support_sc
 import 'package:vegetarian_super_hero/features/other/view/change_password_screen.dart';
 import 'package:vegetarian_super_hero/features/other/view/privacy_policy_screen.dart';
 import 'package:vegetarian_super_hero/features/other/view/terms_of_service_screen.dart';
+import 'package:vegetarian_super_hero/features/plan/view/training_video_screen.dart';
 import 'package:vegetarian_super_hero/features/profile/view/edit_profile_screen.dart';
 import 'package:vegetarian_super_hero/features/profile/view/profile_screen.dart';
 import 'package:vegetarian_super_hero/features/splash/view/splash_screen.dart';
@@ -29,7 +31,7 @@ class AppRouter {
       GlobalKey<NavigatorState>();
 
   static final GoRouter initRoute = GoRouter(
-    initialLocation: RoutePath.navScreen.addBasePath,
+    initialLocation: RoutePath.splashScreen.addBasePath,
     debugLogDiagnostics: true,
     navigatorKey: navigatorKey,
     routes: [
@@ -126,7 +128,7 @@ class AppRouter {
           final extra = state.extra;
           final email = extra as String?;
           return _buildPageWithAnimation(
-            child: ActiveOtpScreen(email: email ?? ""),
+            child: ForgetOtpScreen(email: email ?? ""),
             state: state,
           );
         },
@@ -203,6 +205,16 @@ class AppRouter {
         pageBuilder: (context, state) {
           return _buildPageWithAnimation(
             child: NotificationScreen(),
+            state: state,
+          );
+        },
+      ),
+      GoRoute(
+        name: RoutePath.trainingVideoScreen,
+        path: RoutePath.trainingVideoScreen.addBasePath,
+        pageBuilder: (context, state) {
+          return _buildPageWithAnimation(
+            child: const TrainingVideoScreen(),
             state: state,
           );
         },

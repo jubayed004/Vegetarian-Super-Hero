@@ -19,10 +19,8 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.darkBackground,
       appBar: AppBar(
-        backgroundColor: AppColors.darkBackground,
-        elevation: 0,
+        scrolledUnderElevation: 0,
         leadingWidth: 0,
         centerTitle: false,
         title: Text(
@@ -39,10 +37,7 @@ class ProfileScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // User Info Card
-            const UserInfoCard(
-              name: "ABHIK PATEL",
-              email: "demo@vss.app",
-            ),
+            const UserInfoCard(name: "ABHIK PATEL", email: "demo@vss.app"),
             Gap(24.h),
 
             // Stats Row
@@ -87,12 +82,12 @@ class ProfileScreen extends StatelessWidget {
                 title: AppStrings.notifications.tr,
                 onTap: () => context.pushNamed(RoutePath.notificationScreen),
               ),
-              ProfileMenuItem(
-                icon: Icons.settings_outlined,
-                title: AppStrings.preferences.tr,
-                onTap: () {},
-                isLast: true,
-              ),
+              // ProfileMenuItem(
+              //   icon: Icons.settings_outlined,
+              //   title: AppStrings.preferences.tr,
+              //   onTap: () {},
+              //   isLast: true,
+              // ),
             ]),
             Gap(24.h),
 
@@ -139,7 +134,11 @@ class ProfileScreen extends StatelessWidget {
             Gap(40.h),
 
             // Log Out Button
-            LogoutButton(onTap: () {}),
+            LogoutButton(
+              onTap: () {
+                context.goNamed(RoutePath.loginScreen);
+              },
+            ),
             Gap(20.h),
           ],
         ),

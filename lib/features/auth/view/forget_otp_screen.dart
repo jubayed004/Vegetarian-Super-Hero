@@ -10,9 +10,9 @@ import 'package:vegetarian_super_hero/utils/app_strings/app_strings.dart';
 import 'package:vegetarian_super_hero/utils/color/app_colors.dart';
 import 'package:vegetarian_super_hero/utils/extension/base_extension.dart';
 
-class ActiveOtpScreen extends StatelessWidget {
+class ForgetOtpScreen extends StatelessWidget {
   final String email;
-  const ActiveOtpScreen({super.key, required this.email});
+  const ForgetOtpScreen({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class ActiveOtpScreen extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      backgroundColor: AppColors.darkBackground,
+    
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+      
         elevation: 0,
         leading: IconButton(
           icon: const Icon(
@@ -75,7 +75,13 @@ class ActiveOtpScreen extends StatelessWidget {
                   text: AppStrings.submit.tr,
                   onTap: () {
                     if (formKey.currentState!.validate()) {
-                      AppRouter.route.pushNamed(RoutePath.inputInfoScreen);
+                      AppRouter.route.pushNamed(
+                        RoutePath.resetPasswordScreen,
+                        extra: {
+                          'email': email,
+                          'otp': controller.otpController.text,
+                        },
+                      );
                     }
                   },
                 ),
