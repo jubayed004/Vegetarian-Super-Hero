@@ -37,6 +37,9 @@ class ProfileScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // User Info Card
+
+
+            
             const UserInfoCard(name: "ABHIK PATEL", email: "demo@vss.app"),
             Gap(24.h),
 
