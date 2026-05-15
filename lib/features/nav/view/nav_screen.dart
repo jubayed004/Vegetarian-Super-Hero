@@ -7,14 +7,12 @@ import 'package:vegetarian_super_hero/features/nav/controller/nav_controller.dar
 import 'package:vegetarian_super_hero/features/plan/view/my_plan_screen.dart';
 import 'package:vegetarian_super_hero/features/profile/view/profile_screen.dart';
 import 'package:vegetarian_super_hero/utils/color/app_colors.dart';
-import 'package:vegetarian_super_hero/features/nav/controller/nav_controller.dart';
 
 class NavScreen extends StatelessWidget {
   const NavScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // NavController ইনজেক্ট করা হচ্ছে
     final controller = Get.put(NavController());
 
     final List<Widget> _pages = [

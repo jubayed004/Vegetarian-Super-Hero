@@ -86,7 +86,7 @@ class AppStrings {
   static const String threeToFourActiveDaysPerWeek = "three_to_four_active_days_per_week";
   static const String physicalJobOrFivePlusDays = "physical_job_or_five_plus_days";
   static const String experience = "experience";
-  static const String beginnerRm = "beginnerrm";
+  static const String beginnerRm = "beginners";
   static const String lessThanOneYearTraining = "less_than_one_year_training";
   static const String oneToThreeYearsConsistentTraining = "one_to_three_years_consistent_training";
   static const String threePlusYearsStructuredTraining = "three_plus_years_structured_training";
